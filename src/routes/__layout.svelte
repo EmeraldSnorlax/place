@@ -14,7 +14,6 @@
 		>
 			<path d={mdiGlobeModel} />
 		</svg>
-		<h1 class="text-white text-2xl font-bold sm:inline-block hidden">Location Guesser</h1>
 	</div>
 </nav>
 <slot />
