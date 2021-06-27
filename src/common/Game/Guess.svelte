@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
+	import { mdiMapMarkerRightOutline } from '@mdi/js';
 	import Level from './Level';
 
 	let map;
@@ -17,18 +18,23 @@
 		});
 </script>
 
-<svelte:head>
-	<link rel="stylesheet" type="text/css" href="../node_modules/leaflet/dist/leaflet.css" />
-</svelte:head>
-
-<div class="h-full w-auto m-4">
+<div class="h-full w-auto">
 	<div id="map" class="h-5/6 w-full" />
 	<button
-		class="p-4 bg-blue-500 w-full rounded-b-lg text-white hover:bg-blue-600 hover:shadow-md transition-all"
+		class="p-4 bg-green-500 w-full h-1/6 rounded-b-lg text-white hover:bg-green-600 hover:shadow-md transition-all flex items-center justify-center"
 		on:click={() => {
 			map.setView([0, 0], 2);
 		}}
 	>
-		Recenter
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 24 24"
+			width="32px"
+			height="32px"
+			class="text-white fill-current mr-2"
+		>
+			<path d={mdiMapMarkerRightOutline} />
+		</svg>
+		<span class="text-2xl font-bold">Guess</span>
 	</button>
 </div>

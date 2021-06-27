@@ -1,5 +1,6 @@
 <script>
 	import '../app.postcss';
+	import '../../node_modules/leaflet/dist/leaflet.css';
 	import { mdiGlobeModel } from '@mdi/js';
 </script>
 
