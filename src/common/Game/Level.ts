@@ -9,8 +9,10 @@ export default class Level {
   public image: string
   public tms: string
   public attribution: string
+  public bbox: number[];
 
-  private solution: Location
+  public center: Location
+
 
   constructor() {
     this.Ready = new Promise((resolve) => {
@@ -20,10 +22,15 @@ export default class Level {
           // 100 (0 -> 99) items per page
           const item = res.results[Math.floor(Math.random() * 100)]
           this.id = item._id
-          this.solution = { lat:  item.bbox[0], lon: item.bbox[1] }
+          this.center = {
+            // We average the bounding box to get the center
+            lat: Number(((item.bbox[0] + item.bbox[2]) / 2).toFixed(6)),
+            lon: Number(((item.bbox[1] + item.bbox[3]) / 2).toFixed(6))
+          }
           this.image = item.properties.thumbnail
           this.tms = item.properties.tms
           this.attribution = item.provider
+          this.bbox = item.bbox
 
           resolve(true)
         })
