@@ -65,8 +65,6 @@ export default class Level {
             lon: Number(((item.bbox[0] + item.bbox[2]) / 2).toFixed(6)),
             lat: Number(((item.bbox[1] + item.bbox[3]) / 2).toFixed(6))
           }
-
-          console.log(this.center)
           this.image = item.properties.thumbnail
           this.tms = item.properties.tms
           this.attribution = item.provider

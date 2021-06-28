@@ -8,7 +8,6 @@
 	onMount(async () => {
 		$level = new Level();
 		await $level.Ready;
-		console.log($level);
 		fetched = true;
 	});
 </script>
