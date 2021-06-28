@@ -18,3 +18,12 @@
 	</div>
 </nav>
 <slot />
+<footer class="flex items-center justify-between bg-gray-100 p-4">
+	<div class="flex items-center justify-items-end">
+		<a
+			href="https://github.com/EmeraldSnorlax/place/"
+			rel="noopener"
+			class="text-blue-600 underline">Source on GitHub</a
+		>
+	</div>
+</footer>
