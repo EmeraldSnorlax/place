@@ -1,4 +1,6 @@
-# location-gueser
+# place
+
+the spiritual successor to terrafinder
 
 ## Developing
 
