@@ -122,7 +122,7 @@
 						}}
 						class="p-4 bg-purple-500 w-full h-full rounded-b-lg text-white hover:bg-purple-600 hover:shadow-md transition-all flex items-center justify-between"
 					>
-						<p>Click for next map</p>
+						<p class="text-xl font-semibold">Click for next map</p>
 						<div class="flex items-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
