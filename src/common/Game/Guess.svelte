@@ -3,8 +3,10 @@
 	import { browser } from '$app/env';
 	import { mdiMapMarkerRightOutline } from '@mdi/js';
 	import Level from './Level';
+	import type { Marker } from 'leaflet';
 
 	let map;
+	let selectedLocation: Marker;
 	if (browser)
 		onMount(async () => {
 			const L = await import('leaflet');
@@ -24,6 +26,12 @@
 			map.on('drag', function () {
 				map.panInsideBounds(bounds, { animate: false });
 			});
+
+			// Selection
+			selectedLocation = L.marker([0, 0]).addTo(map);
+			map.on('click', function (e) {
+				selectedLocation.setLatLng(e.latlng);
+			});
 		});
 </script>
 
@@ -32,7 +40,7 @@
 	<button
 		class="p-4 bg-green-500 w-full h-1/6 rounded-b-lg text-white hover:bg-green-600 hover:shadow-md transition-all flex items-center justify-center"
 		on:click={() => {
-			map.setView([0, 0], 2);
+			console.log(selectedLocation.getLatLng());
 		}}
 	>
 		<svg

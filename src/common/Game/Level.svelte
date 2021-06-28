@@ -19,6 +19,7 @@
 			id="image"
 			src={$level.image}
 			alt=""
+      style="max-height: calc(90vh - 48px);"
 			on:load={() => {
 				document.getElementById('image').classList.remove('opacity-0');
         document.getElementById('image-container').classList.remove('bg-gray-300', 'animate-pulse');
